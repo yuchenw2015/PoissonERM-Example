@@ -1,0 +1,12 @@
+  
+# METHODS
+  
+  
+- If the data does not allow for a full analysis due to low incidence of an endpoint (incidence <10\%), the E-R analysis for that endpoint was not conducted.
+- An $\alpha$ of 0.01, which equates to a change in deviance greater than 6.63 ($\chi^2_{0.99}$), was used to identify an exposure metric for each endpoint analyzed. If no exposure metric met the $D$ criteria, the base, full, and final models did not include an exposure metric. If more than one exposure metric met the $D$ criteria, the exposure metric with the smallest p-value was selected. This is based on the rationale that smaller p-values indicate a better fit.
+- Missing data within covariates was imputed provided the percentage of missing values was $\le$ 10\% for continuous covariates and $\le$ 10\% for categorical covariates. For continuous covariates, the median value was used for the imputed value. For categorical covariates, the mode was used for the imputed value. If the percentage of missing values was larger than the stated threshold, the covariates were excluded from consideration for the endpoint.
+- The $\chi^2$ test for the log-likelihood difference in deviance between models was used to judge whether one model had a better fit over another during the backward elimination using an $\alpha$ of 0.01. When the removal of any of the remaining covariates results in a $\Delta D$ equivalent to p-value less than 0.01 the elimination process was stopped and the model was considered final.
+Categorical covariate would be dropped in full model development if all events occurred in only one of its categories. If any of the covariates were highly correlated (e.g. AST and ALT) with a correlation coefficient $\ge$ 0.6, then only one of the correlated covariates was tested further based on univariate Deviance.
+  
+  
+For the full method chapter, please see https://yuchenw2015.github.io/PoissonERM

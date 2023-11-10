@@ -1,0 +1,130 @@
+
+## Analysis of Adverse Event Type 3
+\label{sec:AdverseEventType3}
+
+For the model of Adverse Event Type 3, the analysis dataset included 1000 study participants. 312 of them reported events and 681 of them reported non-events. 
+
+ 
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Demog-Sum/Model_EventsByProtocol_endpoints_3.tex")
+L2 <- gsub("\\hline", "", L)
+L3 <- unname(sapply(L2, function(x) substr(x, 1, nchar(x)-2)))
+L3 <- L3[L3!=""]
+n_col <- max(str_count(L3, "\\&"))+1
+boldn <- NULL
+boldn <- (1:length(L3))[grepl("AIC",L3)]
+multi.index <- L3[grepl("\\multicolumn", L3)]
+multi.index.new <- gsub("\\}","",strsplit(multi.index, split = "\\}\\{") %>% sapply(function(x) x[3]) %>% unlist())
+L4 <- L3
+L4[grepl("\\multicolumn", L3)] <- paste(multi.index.new, paste(rep("&", n_col-1), collapse = " "))
+DF <- read.table(text = L4, sep = "&", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Number of Adverse Event Type 3 (First Event)</span>") %>%
+  footnote(general = c("Percentage values refer to the number of patients. Source:Demog-Sum/Model_EventsByProtocol_endpoints_3.tex"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
+```
+  
+ 
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Adverse-Event-Type-3/Models/ExposureFit.tex")
+L2 <- gsub("\\hline", "", L)
+L3 <- unname(sapply(L2, function(x) substr(x, 1, nchar(x)-2)))
+L3 <- L3[L3!=""]
+n_col <- max(str_count(L3, "\\&"))+1
+boldn <- NULL
+boldn <- (1:length(L3))[grepl("AIC",L3)]
+multi.index <- L3[grepl("\\multicolumn", L3)]
+multi.index.new <- gsub("\\}","",strsplit(multi.index, split = "\\}\\{") %>% sapply(function(x) x[3]) %>% unlist())
+L4 <- L3
+L4[grepl("\\multicolumn", L3)] <- paste(multi.index.new, paste(rep("&", n_col-1), collapse = " "))
+DF <- read.table(text = L4, sep = "&", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Assessment of Exposure Metrics for Adverse Event Type 3</span>") %>%
+  footnote(general = c("Each was assessed using a base model. The user specified the significance level to be p = 0.01 for selection. Source:Adverse-Event-Type-3/Models/ExposureFit.tex"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
+```
+  
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Adverse-Event-Type-3/Models/BaseModelParamSummary.tex")
+L2 <- gsub("\\hline", "", L)
+L3 <- unname(sapply(L2, function(x) substr(x, 1, nchar(x)-2)))
+L3 <- L3[L3!=""]
+n_col <- max(str_count(L3, "\\&"))+1
+boldn <- NULL
+boldn <- (1:length(L3))[grepl("AIC",L3)]
+multi.index <- L3[grepl("\\multicolumn", L3)]
+multi.index.new <- gsub("\\}","",strsplit(multi.index, split = "\\}\\{") %>% sapply(function(x) x[3]) %>% unlist())
+L4 <- L3
+L4[grepl("\\multicolumn", L3)] <- paste(multi.index.new, paste(rep("&", n_col-1), collapse = " "))
+DF <- read.table(text = L4, sep = "&", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Estimates from the Base Model for Adverse Event Type 3</span>") %>%
+  footnote(general = c("Confidence Intervals calculated based the log-likelihood function (profile confidence interval). n = Number
+of participants with event outcomes recorded. N = Total number of participants in the study. Source:Adverse-Event-Type-3/Models/BaseModelParamSummary.tex"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
+```
+  
+ 
+
+```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:AdverseEventType3Predictionmodelprediction} <span style=\"color: purple;\">Incidence of Adverse Event Type 3 per 100 Patient Years</span>." ,fig.topcaption=TRUE, out.width = '85%'}
+knitr::include_graphics("Adverse-Event-Type-3/Prediction/model_prediction.png")
+```
+<font size=3> *Note. * Top: Gray circles and error bars are the observed mean and 95\% CI, respectively, of the incidence of Adverse Event Type 3 (all types) per 100 patient years for each bin of the shown exposure metric in the analysis population (n of bins = 5). Bottom: Predicted exposure metric for each dose are derived from simulated patients with randomly drawn random effect parameters as described by the final population PK model and body weights sampled from observations. Source:Adverse-Event-Type-3/Prediction/model_prediction.png </font>
+  
+ 
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Adverse-Event-Type-3/Models/FinalModelParamSummary.tex")
+L2 <- gsub("\\hline", "", L)
+L3 <- unname(sapply(L2, function(x) substr(x, 1, nchar(x)-2)))
+L3 <- L3[L3!=""]
+n_col <- max(str_count(L3, "\\&"))+1
+boldn <- NULL
+boldn <- (1:length(L3))[grepl("AIC",L3)]
+multi.index <- L3[grepl("\\multicolumn", L3)]
+multi.index.new <- gsub("\\}","",strsplit(multi.index, split = "\\}\\{") %>% sapply(function(x) x[3]) %>% unlist())
+L4 <- L3
+L4[grepl("\\multicolumn", L3)] <- paste(multi.index.new, paste(rep("&", n_col-1), collapse = " "))
+DF <- read.table(text = L4, sep = "&", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Estimates from the Final Model for Adverse Event Type 3</span>") %>%
+  footnote(general = c("Confidence Intervals calculated based on the log-likelihood function (profile confidence interval). n = Number
+of participants with event outcomes recorded. N = Total number of participants in the study. Source:Adverse-Event-Type-3/Models/FinalModelParamSummary.tex"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
+```
+  
+ 
+```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:AdverseEventType3ORAdverseEventType3odds} <span style=\"color: purple;\">Odds Ratio for  Adverse Event Type 3</span>." ,fig.topcaption=TRUE, out.width = '85%'}
+knitr::include_graphics("Adverse-Event-Type-3/OR/Adverse-Event-Type-3-odds.png")
+```
+<font size=3> *Note. * 95\% confidence intervals are presented with the estimate. Source:Adverse-Event-Type-3/OR/Adverse-Event-Type-3-odds.png </font>
+  
+ 
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Adverse-Event-Type-3/OR/OR_table.tex")
+L2 <- gsub("\\hline", "", L)
+L3 <- unname(sapply(L2, function(x) substr(x, 1, nchar(x)-2)))
+L3 <- L3[L3!=""]
+n_col <- max(str_count(L3, "\\&"))+1
+boldn <- NULL
+boldn <- (1:length(L3))[grepl("AIC",L3)]
+multi.index <- L3[grepl("\\multicolumn", L3)]
+multi.index.new <- gsub("\\}","",strsplit(multi.index, split = "\\}\\{") %>% sapply(function(x) x[3]) %>% unlist())
+L4 <- L3
+L4[grepl("\\multicolumn", L3)] <- paste(multi.index.new, paste(rep("&", n_col-1), collapse = " "))
+DF <- read.table(text = L4, sep = "&", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Risk Ratio for Covariates in First Incidence of Adverse Event Type 3</span>") %>%
+  footnote(general = c("Risk Ratio of scenarios based on final model. 95% confidence intervals are presented with the estimate. The values in each continuous covariate are 25th and 75th percentile. Source:Adverse-Event-Type-3/OR/OR_table.tex"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
+```
+  

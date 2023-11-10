@@ -1,0 +1,64 @@
+
+---  Backwards Selection Step: 1  ---
+
+|                         | Df|Deviance |AIC     |LRT   |Pr(>Chi) |
+|:------------------------|--:|:--------|:-------|:-----|:--------|
+|<none>                   | NA|748.51   |1774.51 |NA    |NA       |
+|age                      |  1|749.18   |1773.18 |0.66  |0.4158   |
+|Baseline Bodyweight (kg) |  1|749.40   |1773.40 |0.89  |0.3455   |
+|Race                     |  3|750.59   |1770.59 |2.08  |0.5562   |
+|Sex                      |  1|749.43   |1773.43 |0.92  |0.3377   |
+|Geographical_._Location  |  1|801.21   |1825.21 |52.70 |<0.0001  |
+
+---  Removing Race. P Value = 0.5562  ---
+
+---  Backwards Selection Step: 2  ---
+
+|                         | Df|Deviance |AIC     |LRT   |Pr(>Chi) |
+|:------------------------|--:|:--------|:-------|:-----|:--------|
+|<none>                   | NA|750.59   |1770.59 |NA    |NA       |
+|age                      |  1|751.17   |1769.17 |0.58  |0.4482   |
+|Baseline Bodyweight (kg) |  1|751.48   |1769.48 |0.89  |0.3459   |
+|Sex                      |  1|751.32   |1769.32 |0.73  |0.3928   |
+|Geographical_._Location  |  1|803.53   |1821.53 |52.94 |<0.0001  |
+
+---  Removing age. P Value = 0.4482  ---
+
+---  Backwards Selection Step: 3  ---
+
+|                         | Df|Deviance |AIC     |LRT   |Pr(>Chi) |
+|:------------------------|--:|:--------|:-------|:-----|:--------|
+|<none>                   | NA|751.17   |1769.17 |NA    |NA       |
+|Baseline Bodyweight (kg) |  1|752.02   |1768.02 |0.85  |0.3569   |
+|Sex                      |  1|751.90   |1767.90 |0.73  |0.3915   |
+|Geographical_._Location  |  1|803.75   |1819.75 |52.58 |<0.0001  |
+
+---  Removing Sex. P Value = 0.3915  ---
+
+---  Backwards Selection Step: 4  ---
+
+|                         | Df|Deviance |AIC     |LRT   |Pr(>Chi) |
+|:------------------------|--:|:--------|:-------|:-----|:--------|
+|<none>                   | NA|751.90   |1767.90 |NA    |NA       |
+|Baseline Bodyweight (kg) |  1|752.68   |1766.68 |0.78  |0.3776   |
+|Geographical_._Location  |  1|804.67   |1818.67 |52.77 |<0.0001  |
+
+---  Removing Baseline Bodyweight (kg). P Value = 0.3776  ---
+
+---  Backwards Selection Step: 5  ---
+
+|                        | Df|Deviance |AIC     |LRT   |Pr(>Chi) |
+|:-----------------------|--:|:--------|:-------|:-----|:--------|
+|<none>                  | NA|752.68   |1766.68 |NA    |NA       |
+|Geographical_._Location |  1|806.16   |1818.16 |53.48 |<0.0001  |
+
+---  No Effects with P Value >0.01  ---
+
+---  Summary of Backward Elimination  ---
+
+|                         | Df|Deviance |AIC     |LRT  |Pr(>Chi) | Step|
+|:------------------------|--:|:--------|:-------|:----|:--------|----:|
+|Race                     |  3|750.59   |1770.59 |2.08 |0.5562   |    1|
+|age                      |  1|751.17   |1769.17 |0.58 |0.4482   |    2|
+|Sex                      |  1|751.90   |1767.90 |0.73 |0.3915   |    3|
+|Baseline Bodyweight (kg) |  1|752.68   |1766.68 |0.78 |0.3776   |    4|

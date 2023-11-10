@@ -1,0 +1,6 @@
+# EXECUTIVE SUMMARY
+
+Poisson regression models were developed for Adverse Event Type 2,  and Adverse Event Type 3.
+
+-  A model was developed for Adverse Event Type 2. The analysis dataset included a total of 504 events (50.40\% of study participants). The selected best exposure metric was C(ave2) (ng/mL) (p<0.0001). There was one covariate in the final model: Geographical Location.
+-  A model was developed for Adverse Event Type 3. The analysis dataset included a total of 312 events (31.20\% of study participants). There was not a statistically significant exposure response relationship. There was one covariate in the final model: Sex.
