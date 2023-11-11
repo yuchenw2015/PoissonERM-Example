@@ -1,0 +1,4 @@
+Effects	Estimate	95\% CI	z value	Pr(>|z|)	Odds Ratio	95\% CI of Odds Ratio
+(Intercept)	-6.44	(-6.56, -6.34)	-114	<0.001	0.00159	(0.00142, 0.00177)
+\hline n	N	$\Delta$D	df	Pr(>Chisq)	LogLik	AIC \hline
+993	1000	0.00	0	1.0000	-733.22	1468.44

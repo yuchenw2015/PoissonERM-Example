@@ -1,0 +1,9 @@
+Statistics	1	2	3	Total
+Total Number of Individuals	327	327	346	1000
+Adverse Event Type 1				
+Event = Yes				
+Severe	14	5	9	
+Mild	17	5	5	
+Event = No				
+None	293	310	326	
+Missing (\%)	3 (0.9)	7 (2.1)	6 (1.7)	16 (1.6)

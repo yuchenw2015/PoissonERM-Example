@@ -1,0 +1,85 @@
+
+## Analysis of Adverse Event Type 3
+\label{sec:AdverseEventType3}
+
+For the model of Adverse Event Type 3, the analysis dataset included 1000 study participants. 312 of them reported events and 681 of them reported non-events. 
+
+ 
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Demog-Sum/Model_EventsByProtocol_endpoints_3.tsv")
+boldn <- (1:length(L))[grepl("AIC",L)]
+DF <- read.table(text = L, sep = "\t", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Number of Adverse Event Type 3 (First Event)</span>") %>%
+  footnote(general = c("Percentage values refer to the number of patients. Source:Demog-Sum/Model_EventsByProtocol_endpoints_3.tsv"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L))[grepl("\t\t\t\t", L)])-1,bold=T,hline_after = T)
+```
+  
+ 
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Adverse-Event-Type-3/Models/ExposureFit.tsv")
+boldn <- (1:length(L))[grepl("AIC",L)]
+DF <- read.table(text = L, sep = "\t", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Assessment of Exposure Metrics for Adverse Event Type 3</span>") %>%
+  footnote(general = c("Each was assessed using a base model. The user specified the significance level to be p = 0.01 for selection. Source:Adverse-Event-Type-3/Models/ExposureFit.tsv"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L))[grepl("\t\t\t\t", L)])-1,bold=T,hline_after = T)
+```
+  
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Adverse-Event-Type-3/Models/BaseModelParamSummary.tsv")
+boldn <- (1:length(L))[grepl("AIC",L)]
+DF <- read.table(text = L, sep = "\t", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Estimates from the Base Model for Adverse Event Type 3</span>") %>%
+  footnote(general = c("Confidence Intervals calculated based the log-likelihood function (profile confidence interval). n = Number
+of participants with event outcomes recorded. N = Total number of participants in the study. Source:Adverse-Event-Type-3/Models/BaseModelParamSummary.tsv"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L))[grepl("\t\t\t\t", L)])-1,bold=T,hline_after = T)
+```
+  
+ 
+
+```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:AdverseEventType3Predictionmodelprediction} <span style=\"color: purple;\">Incidence of Adverse Event Type 3 per 100 Patient Years</span>." ,fig.topcaption=TRUE, out.width = '85%'}
+knitr::include_graphics("Adverse-Event-Type-3/Prediction/model_prediction.png")
+```
+<font size=3> *Note. * Top: Gray circles and error bars are the observed mean and 95\% CI, respectively, of the incidence of Adverse Event Type 3 (all types) per 100 patient years for each bin of the shown exposure metric in the analysis population (n of bins = 7). Bottom: Predicted exposure metric values for each dose are derived from 2,500 simulated subjects. Source:Adverse-Event-Type-3/Prediction/model_prediction.png </font>
+  
+ 
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Adverse-Event-Type-3/Models/FinalModelParamSummary.tsv")
+boldn <- (1:length(L))[grepl("AIC",L)]
+DF <- read.table(text = L, sep = "\t", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Estimates from the Final Model for Adverse Event Type 3</span>") %>%
+  footnote(general = c("Confidence Intervals calculated based on the log-likelihood function (profile confidence interval). n = Number
+of participants with event outcomes recorded. N = Total number of participants in the study. Source:Adverse-Event-Type-3/Models/FinalModelParamSummary.tsv"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L))[grepl("\t\t\t\t", L)])-1,bold=T,hline_after = T)
+```
+  
+ 
+```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:AdverseEventType3ORAdverseEventType3odds} <span style=\"color: purple;\">Odds Ratio for  Adverse Event Type 3</span>." ,fig.topcaption=TRUE, out.width = '85%'}
+knitr::include_graphics("Adverse-Event-Type-3/OR/Adverse-Event-Type-3-odds.png")
+```
+<font size=3> *Note. * 95\% confidence intervals are presented with the estimate. Source:Adverse-Event-Type-3/OR/Adverse-Event-Type-3-odds.png </font>
+  
+ 
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Adverse-Event-Type-3/OR/OR_table.tsv")
+boldn <- (1:length(L))[grepl("AIC",L)]
+DF <- read.table(text = L, sep = "\t", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Risk Ratio for Covariates in First Incidence of Adverse Event Type 3</span>") %>%
+  footnote(general = c("Risk Ratio of scenarios based on final model. 95% confidence intervals are presented with the estimate. The values in each continuous covariate are 25th and 75th percentile. Source:Adverse-Event-Type-3/OR/OR_table.tsv"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L))[grepl("\t\t\t\t", L)])-1,bold=T,hline_after = T)
+```
+  

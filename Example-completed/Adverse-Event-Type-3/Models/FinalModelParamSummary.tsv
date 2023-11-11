@@ -1,0 +1,5 @@
+Effects	Estimate	95\% CI	z value	Pr(>|z|)	Odds Ratio	95\% CI of Odds Ratio
+(Intercept)	-6.72	(-6.91, -6.55)	-74	<0.001	-	-
+Sex Female	0.506	(0.28, 0.736)	4.35	<0.001	1.66	(1.32, 2.09)
+\hline n	N	$\Delta$D	df	Pr(>Chisq)	LogLik	AIC \hline
+993	1000	19.47	1	<0.001	-723.49	1450.98

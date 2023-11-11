@@ -1,0 +1,54 @@
+
+# Observed Data \label{sec:observed}
+
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Demog-Sum/Demographics-categorical.tsv")
+boldn <- (1:length(L))[grepl("AIC",L)]
+DF <- read.table(text = L, sep = "\t", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Demographic Summaries of Categorical Covariates</span>") %>%
+  footnote(general = c("This table was made from an automated script. Source:Demog-Sum/Demographics-categorical.tsv"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L))[grepl("\t\t\t\t", L)])-1,bold=T,hline_after = T)
+```
+  
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Demog-Sum/Demographics-continuous.tsv")
+boldn <- (1:length(L))[grepl("AIC",L)]
+DF <- read.table(text = L, sep = "\t", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Demographic Summaries of Continuous Covariates</span>") %>%
+  footnote(general = c("This table was made from an automated script. Source:Demog-Sum/Demographics-continuous.tsv"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L))[grepl("\t\t\t\t", L)])-1,bold=T,hline_after = T)
+```
+  
+```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
+L <- readLines("Demog-Sum/EventsByProtocol.tsv")
+boldn <- (1:length(L))[grepl("AIC",L)]
+DF <- read.table(text = L, sep = "\t", header = TRUE, strip.white = TRUE, check.names = FALSE)
+kbl(DF, caption = "<span style=\"color: purple;\">Summary of Events By Endpoint</span>") %>%
+  footnote(general = c("This table was made from an automated script. Source:Demog-Sum/EventsByProtocol.tsv"),
+           general_title = "Note.", 
+           footnote_as_chunk = TRUE) %>%
+  kable_styling(full_width = T) %>%
+  row_spec(c(boldn,(1:length(L))[grepl("\t\t\t\t", L)])-1,bold=T,hline_after = T)
+```
+  
+```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:CovEDAAdverseEventType1exp} <span style=\"color: purple;\">Adverse Event Type 1 Exposures</span>." ,fig.topcaption=TRUE, out.width = '85%'}
+knitr::include_graphics("Cov-EDA/Adverse-Event-Type-1-exp.png")
+```
+<font size=3> *Note. * This figure was made from an automated script. Source:Cov-EDA/Adverse-Event-Type-1-exp.png </font>
+  
+```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:CovEDAAdverseEventType2exp} <span style=\"color: purple;\">Adverse Event Type 2 Exposures</span>." ,fig.topcaption=TRUE, out.width = '85%'}
+knitr::include_graphics("Cov-EDA/Adverse-Event-Type-2-exp.png")
+```
+<font size=3> *Note. * This figure was made from an automated script. Source:Cov-EDA/Adverse-Event-Type-2-exp.png </font>
+  
+```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:CovEDAAdverseEventType3exp} <span style=\"color: purple;\">Adverse Event Type 3 Exposures</span>." ,fig.topcaption=TRUE, out.width = '85%'}
+knitr::include_graphics("Cov-EDA/Adverse-Event-Type-3-exp.png")
+```
+<font size=3> *Note. * This figure was made from an automated script. Source:Cov-EDA/Adverse-Event-Type-3-exp.png </font>
+  
