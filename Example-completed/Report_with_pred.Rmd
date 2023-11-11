@@ -85,7 +85,8 @@ kbl(DF, caption = "<span style=\"color: purple;\">Demographic Summaries of Categ
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
 L <- readLines("Demog-Sum/Demographics-continuous.tex")
 L2 <- gsub("\\hline", "", L)
@@ -106,7 +107,8 @@ kbl(DF, caption = "<span style=\"color: purple;\">Demographic Summaries of Conti
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
 L <- readLines("Demog-Sum/EventsByProtocol.tex")
 L2 <- gsub("\\hline", "", L)
@@ -127,22 +129,26 @@ kbl(DF, caption = "<span style=\"color: purple;\">Summary of Events By Endpoint<
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
 ```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:CovEDAAdverseEventType1exp} <span style=\"color: purple;\">Adverse Event Type 1 Exposures</span>." ,fig.topcaption=TRUE, out.width = '85%'}
 knitr::include_graphics("Cov-EDA/Adverse-Event-Type-1-exp.png")
 ```
 <font size=3> *Note. * This figure was made from an automated script. Source:Cov-EDA/Adverse-Event-Type-1-exp.png </font>
-  
+  
+
 ```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:CovEDAAdverseEventType2exp} <span style=\"color: purple;\">Adverse Event Type 2 Exposures</span>." ,fig.topcaption=TRUE, out.width = '85%'}
 knitr::include_graphics("Cov-EDA/Adverse-Event-Type-2-exp.png")
 ```
 <font size=3> *Note. * This figure was made from an automated script. Source:Cov-EDA/Adverse-Event-Type-2-exp.png </font>
-  
+  
+
 ```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:CovEDAAdverseEventType3exp} <span style=\"color: purple;\">Adverse Event Type 3 Exposures</span>." ,fig.topcaption=TRUE, out.width = '85%'}
 knitr::include_graphics("Cov-EDA/Adverse-Event-Type-3-exp.png")
 ```
 <font size=3> *Note. * This figure was made from an automated script. Source:Cov-EDA/Adverse-Event-Type-3-exp.png </font>
-  
+  
+
 # RESULTS 
  
 
@@ -172,7 +178,8 @@ kbl(DF, caption = "<span style=\"color: purple;\">Number of Adverse Event Type 2
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
  
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
 L <- readLines("Adverse-Event-Type-2/Models/ExposureFit.tex")
@@ -194,7 +201,8 @@ kbl(DF, caption = "<span style=\"color: purple;\">Assessment of Exposure Metrics
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
 L <- readLines("Adverse-Event-Type-2/Models/BaseModelParamSummary.tex")
 L2 <- gsub("\\hline", "", L)
@@ -216,7 +224,8 @@ of participants with event outcomes recorded. N = Total number of participants i
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
  
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
 L <- readLines("Adverse-Event-Type-2/Prediction/mod_pred.tex")
@@ -238,12 +247,14 @@ kbl(DF, caption = "<span style=\"color: purple;\">Incidence of Adverse Event Typ
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
 ```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:AdverseEventType2Predictionmodelprediction} <span style=\"color: purple;\">Incidence of Adverse Event Type 2 per 100 Patient Years</span>." ,fig.topcaption=TRUE, out.width = '85%'}
 knitr::include_graphics("Adverse-Event-Type-2/Prediction/model_prediction.png")
 ```
 <font size=3> *Note. * Top: Gray circles and error bars are the observed mean and 95\% CI, respectively, of the incidence of Adverse Event Type 2 (all types) per 100 patient years for each bin of the shown exposure metric in the analysis population (n of bins = 5). The blue line, (and blue shaded area) are the model-predicted mean (and 95\% CI) incidence per 100 patient years for the range of observed exposure metric in the analysis population. Red circles and error bars are the model-predicted mean and 95\% CI, respectively, incidence of Adverse Event Type 2 per 100 patients years. Bottom: Predicted exposure metric for each dose are derived from simulated patients with randomly drawn random effect parameters as described by the final population PK model and body weights sampled from observations. Source:Adverse-Event-Type-2/Prediction/model_prediction.png </font>
-  
+  
+
  
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
 L <- readLines("Adverse-Event-Type-2/Models/FinalModelParamSummary.tex")
@@ -266,13 +277,15 @@ of participants with event outcomes recorded. N = Total number of participants i
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
  
 ```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:AdverseEventType2ORAdverseEventType2odds} <span style=\"color: purple;\">Odds Ratio for  Adverse Event Type 2</span>." ,fig.topcaption=TRUE, out.width = '85%'}
 knitr::include_graphics("Adverse-Event-Type-2/OR/Adverse-Event-Type-2-odds.png")
 ```
 <font size=3> *Note. * 95\% confidence intervals are presented with the estimate. Source:Adverse-Event-Type-2/OR/Adverse-Event-Type-2-odds.png </font>
-  
+  
+
  
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
 L <- readLines("Adverse-Event-Type-2/OR/OR_table.tex")
@@ -294,7 +307,8 @@ kbl(DF, caption = "<span style=\"color: purple;\">Risk Ratio for Covariates in F
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
 
 ## Analysis of Adverse Event Type 3
 \label{sec:AdverseEventType3}
@@ -322,7 +336,8 @@ kbl(DF, caption = "<span style=\"color: purple;\">Number of Adverse Event Type 3
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
  
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
 L <- readLines("Adverse-Event-Type-3/Models/ExposureFit.tex")
@@ -344,7 +359,8 @@ kbl(DF, caption = "<span style=\"color: purple;\">Assessment of Exposure Metrics
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
 L <- readLines("Adverse-Event-Type-3/Models/BaseModelParamSummary.tex")
 L2 <- gsub("\\hline", "", L)
@@ -366,14 +382,16 @@ of participants with event outcomes recorded. N = Total number of participants i
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
  
 
 ```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:AdverseEventType3Predictionmodelprediction} <span style=\"color: purple;\">Incidence of Adverse Event Type 3 per 100 Patient Years</span>." ,fig.topcaption=TRUE, out.width = '85%'}
 knitr::include_graphics("Adverse-Event-Type-3/Prediction/model_prediction.png")
 ```
 <font size=3> *Note. * Top: Gray circles and error bars are the observed mean and 95\% CI, respectively, of the incidence of Adverse Event Type 3 (all types) per 100 patient years for each bin of the shown exposure metric in the analysis population (n of bins = 5). Bottom: Predicted exposure metric for each dose are derived from simulated patients with randomly drawn random effect parameters as described by the final population PK model and body weights sampled from observations. Source:Adverse-Event-Type-3/Prediction/model_prediction.png </font>
-  
+  
+
  
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
 L <- readLines("Adverse-Event-Type-3/Models/FinalModelParamSummary.tex")
@@ -396,13 +414,15 @@ of participants with event outcomes recorded. N = Total number of participants i
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
  
 ```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:AdverseEventType3ORAdverseEventType3odds} <span style=\"color: purple;\">Odds Ratio for  Adverse Event Type 3</span>." ,fig.topcaption=TRUE, out.width = '85%'}
 knitr::include_graphics("Adverse-Event-Type-3/OR/Adverse-Event-Type-3-odds.png")
 ```
 <font size=3> *Note. * 95\% confidence intervals are presented with the estimate. Source:Adverse-Event-Type-3/OR/Adverse-Event-Type-3-odds.png </font>
-  
+  
+
  
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
 L <- readLines("Adverse-Event-Type-3/OR/OR_table.tex")
@@ -424,17 +444,18 @@ kbl(DF, caption = "<span style=\"color: purple;\">Risk Ratio for Covariates in F
   kable_styling(full_width = T) %>%
   row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
-  
+  
+
 # CONCLUSION 
  
-- A poisson regression model was developed for Adverse Event Type 2.
+- A Poisson regression model was developed for Adverse Event Type 2.
 
     -  The selected best exposure metric was C(ave2) (ng/mL) (p<0.0001).
     -  For the model of Adverse Event Type 2, the analysis dataset included 1000 study participants. 504 of them reported events and 482 of them reported non-events. 
     -  There was one covariate in the final model: Geographical Location.
     -  The covariate Geographical Location, with the reference level of Geographical Location US, resulted in a statistically significant improvement in the model fit. The odds ratios and 95\% confidence intervals for Geographical Location Non-US are 1.96 (1.64, 2.34), respectively.
 
-- A poisson regression model was developed for Adverse Event Type 3.
+- A Poisson regression model was developed for Adverse Event Type 3.
 
     -  There was not a statistically significant exposure response relationship.
     -  For the model of Adverse Event Type 3, the analysis dataset included 1000 study participants. 312 of them reported events and 681 of them reported non-events. 
