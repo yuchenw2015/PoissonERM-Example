@@ -1,4 +1,6 @@
 # Examples for PoissonERM: Automate Analysis via Poisson Regression
+This repository contains example codes of using PoissonERM. Example1 folder and Example2 folder contain all necessary control scripts and simulated data sets.
+To run the examples, start with "command.R".
 
 PoissonERM is a package-like automation tool for implementing poisson regression in binary-endpoint(s) exposure-response (ER) analysis. Poisson regression is useful for estimating the incidence rate while time is considered as a factor. 
 
