@@ -1,4 +1,5 @@
 library(PoissonERM)
+# always clean the environment before using any functions from PoissonERM
 rm(list = ls(all = TRUE))
 # set folder.dir1 as the path to folder "Example1"
 # folder.dir1 is better to be an absolute path
@@ -15,6 +16,7 @@ ReportPoisson(pathRunType = getwd(),
               file.name = "Report_with_pred.Rmd")
 
 
+# always clean the environment before using any functions from PoissonERM
 rm(list = ls(all = TRUE))
 # set folder.dir2 as the path to folder "Example2"
 # folder.dir2 is better to be an absolute path
