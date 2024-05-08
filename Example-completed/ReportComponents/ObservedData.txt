@@ -2,39 +2,66 @@
 # Observed Data \label{sec:observed}
 
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
-L <- readLines("Demog-Sum/Demographics-categorical.tsv")
-boldn <- (1:length(L))[grepl("AIC",L)]
-DF <- read.table(text = L, sep = "\t", header = TRUE, strip.white = TRUE, check.names = FALSE)
+L <- readLines("Demog-Sum/Demographics-categorical.tex")
+L2 <- gsub("\\hline", "", L)
+L3 <- unname(sapply(L2, function(x) substr(x, 1, nchar(x)-2)))
+L3 <- L3[L3!=""]
+n_col <- max(str_count(L3, "\\&"))+1
+boldn <- NULL
+boldn <- (1:length(L3))[grepl("AIC",L3)]
+multi.index <- L3[grepl("\\multicolumn", L3)]
+multi.index.new <- gsub("\\}","",strsplit(multi.index, split = "\\}\\{") %>% sapply(function(x) x[3]) %>% unlist())
+L4 <- L3
+L4[grepl("\\multicolumn", L3)] <- paste(multi.index.new, paste(rep("&", n_col-1), collapse = " "))
+DF <- read.table(text = L4, sep = "&", header = TRUE, strip.white = TRUE, check.names = FALSE)
 kbl(DF, caption = "<span style=\"color: purple;\">Demographic Summaries of Categorical Covariates</span>") %>%
-  footnote(general = c("This table was made from an automated script. Source:Demog-Sum/Demographics-categorical.tsv"),
+  footnote(general = c("This table was made from an automated script. Source:Demog-Sum/Demographics-categorical.tex"),
            general_title = "Note.", 
            footnote_as_chunk = TRUE) %>%
   kable_styling(full_width = T) %>%
-  row_spec(c(boldn,(1:length(L))[grepl("\t\t\t\t", L)])-1,bold=T,hline_after = T)
+  row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
   
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
-L <- readLines("Demog-Sum/Demographics-continuous.tsv")
-boldn <- (1:length(L))[grepl("AIC",L)]
-DF <- read.table(text = L, sep = "\t", header = TRUE, strip.white = TRUE, check.names = FALSE)
+L <- readLines("Demog-Sum/Demographics-continuous.tex")
+L2 <- gsub("\\hline", "", L)
+L3 <- unname(sapply(L2, function(x) substr(x, 1, nchar(x)-2)))
+L3 <- L3[L3!=""]
+n_col <- max(str_count(L3, "\\&"))+1
+boldn <- NULL
+boldn <- (1:length(L3))[grepl("AIC",L3)]
+multi.index <- L3[grepl("\\multicolumn", L3)]
+multi.index.new <- gsub("\\}","",strsplit(multi.index, split = "\\}\\{") %>% sapply(function(x) x[3]) %>% unlist())
+L4 <- L3
+L4[grepl("\\multicolumn", L3)] <- paste(multi.index.new, paste(rep("&", n_col-1), collapse = " "))
+DF <- read.table(text = L4, sep = "&", header = TRUE, strip.white = TRUE, check.names = FALSE)
 kbl(DF, caption = "<span style=\"color: purple;\">Demographic Summaries of Continuous Covariates</span>") %>%
-  footnote(general = c("This table was made from an automated script. Source:Demog-Sum/Demographics-continuous.tsv"),
+  footnote(general = c("This table was made from an automated script. Source:Demog-Sum/Demographics-continuous.tex"),
            general_title = "Note.", 
            footnote_as_chunk = TRUE) %>%
   kable_styling(full_width = T) %>%
-  row_spec(c(boldn,(1:length(L))[grepl("\t\t\t\t", L)])-1,bold=T,hline_after = T)
+  row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
   
 ```{r echo=FALSE, message=F, warning=F, paged.print=FALSE}
-L <- readLines("Demog-Sum/EventsByProtocol.tsv")
-boldn <- (1:length(L))[grepl("AIC",L)]
-DF <- read.table(text = L, sep = "\t", header = TRUE, strip.white = TRUE, check.names = FALSE)
+L <- readLines("Demog-Sum/EventsByProtocol.tex")
+L2 <- gsub("\\hline", "", L)
+L3 <- unname(sapply(L2, function(x) substr(x, 1, nchar(x)-2)))
+L3 <- L3[L3!=""]
+n_col <- max(str_count(L3, "\\&"))+1
+boldn <- NULL
+boldn <- (1:length(L3))[grepl("AIC",L3)]
+multi.index <- L3[grepl("\\multicolumn", L3)]
+multi.index.new <- gsub("\\}","",strsplit(multi.index, split = "\\}\\{") %>% sapply(function(x) x[3]) %>% unlist())
+L4 <- L3
+L4[grepl("\\multicolumn", L3)] <- paste(multi.index.new, paste(rep("&", n_col-1), collapse = " "))
+DF <- read.table(text = L4, sep = "&", header = TRUE, strip.white = TRUE, check.names = FALSE)
 kbl(DF, caption = "<span style=\"color: purple;\">Summary of Events By Endpoint</span>") %>%
-  footnote(general = c("This table was made from an automated script. Source:Demog-Sum/EventsByProtocol.tsv"),
+  footnote(general = c("This table was made from an automated script. Source:Demog-Sum/EventsByProtocol.tex"),
            general_title = "Note.", 
            footnote_as_chunk = TRUE) %>%
   kable_styling(full_width = T) %>%
-  row_spec(c(boldn,(1:length(L))[grepl("\t\t\t\t", L)])-1,bold=T,hline_after = T)
+  row_spec(c(boldn,(1:length(L3))[grepl("\\multicolumn", L3)])-1,bold=T,hline_after = T)
 ```
   
 ```{r, echo=FALSE, out.width="100%", fig.cap="\\label{fig:CovEDAAdverseEventType1exp} <span style=\"color: purple;\">Adverse Event Type 1 Exposures</span>." ,fig.topcaption=TRUE, out.width = '85%'}

@@ -224,6 +224,6 @@ OR_tab <- "Yes" #Default value "Yes"
 #Include Figures in the report
 OR_fig <- "Yes" #Default value "Yes"
 
-LaTex.table <- FALSE #Default value FALSE
+LaTex.table <- TRUE #Default value FALSE
 
 #ERModPoisson()
