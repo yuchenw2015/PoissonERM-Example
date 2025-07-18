@@ -1,4 +1,4 @@
-Effects	Estimate	95\% CI	z value	Pr(>|z|)	Odds Ratio	95\% CI of Odds Ratio
+Effects	Estimate	95\% CI	z value	Pr(>|z|)	Risk Ratio	95\% CI of Risk Ratio
 (Intercept)	-7.5	(-8.56, -6.45)	-13.9	<0.001	-	-
 age	0.00186	(-0.00982, 0.0135)	0.312	0.7549	1	(0.99, 1.01)
 Baseline Bodyweight (kg)	0.00849	(-0.00303, 0.02)	1.44	0.1488	1.01	(0.997, 1.02)

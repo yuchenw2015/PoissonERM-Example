@@ -1,4 +1,4 @@
-Effects	Estimate	95\% CI	z value	Pr(>|z|)	Odds Ratio	95\% CI of Odds Ratio
+Effects	Estimate	95\% CI	z value	Pr(>|z|)	Risk Ratio	95\% CI of Risk Ratio
 (Intercept)	-6.3	(-6.48, -6.13)	-69.3	<0.001	-	-
 C(ave2) (ng/mL)	0.00605	(0.00344, 0.0086)	4.6	<0.001	1.01	(1, 1.01)
 \hline n	N	$\Delta$D	df	Pr(>Chisq)	LogLik	AIC \hline
